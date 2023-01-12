@@ -1,0 +1,930 @@
+[_id]
+	FID=53000
+	ProductCode=1
+	CodePage=1252
+[end]
+
+[_comments]
+[End]
+
+[_drawOrder]
+Type=0x4b,0
+			;background
+Type=0x10,1
+			;built-up area
+Type=0x0c,1
+			;built-up area
+Type=0x55,2
+			;sand/beach
+Type=0x14,2
+			;park
+Type=0x1a,2
+			;cemetery
+Type=0x3a,3
+			;farmland
+Type=0x17,3
+			;grass
+Type=0x50,4
+			;mixed forest
+Type=0x14,4
+			;meadow
+Type=0x19,4
+			;sports field
+Type=0x4e,4
+			;wine
+Type=0x4f,4
+			;scrubs
+Type=0x32,4
+			;sea
+Type=0x3c,4
+			;water
+Type=0x51,4
+			;wetlands
+Type=0x3d,4
+			;water
+Type=0x46,4
+			;river
+Type=0x47,4
+			;river
+Type=0x13,5
+			;building
+Type=0x04,6
+			;exclusion zone
+[end]
+
+
+; large labels
+;[_point]
+;Type=0x0200
+;ExtendedLabels=Y
+;FontStyle=LargeFont
+;DayXpm="1 1 2 1"
+;" 	c None"
+;"! c #000000"
+;" "
+;[end]
+
+; normal labels
+;[_point]
+;Type=0x0300
+;ExtendedLabels=Y
+;FontStyle=NormalFont
+;DayXpm="8 8 6 1"
+;" 	c None"
+;".	c #000000"
+;"+	c #007700"
+;"@	c #00A400"
+;"#	c #00D200"
+;"$	c #FFFFFF"
+;"   $$   "
+;"  $..$  "
+;" $.#@.$ "
+;"$.##@+.$"
+;"$.@@@+.$"
+;" $.++.$ "
+;"  $..$  "
+;"   $$   "
+;[end]
+
+; small labels
+;[_point]
+;Type=0x0400
+;ExtendedLabels=Y
+;FontStyle=SmallFont
+;DayXpm="6 6 5 1"
+;" 	c None"
+;".	c #000000"
+;"+	c #00A400"
+;"@	c #00D200"
+;"#	c #FFFFFF"
+;"  ##  "
+;" #..# "
+;"#.@@.#"
+;"#.@+.#"
+;" #..# "
+;"  ##  "
+;[end]
+
+
+[_point]
+Type=0x6414
+String=0x04,drinking water
+String=0x07,Dricksvatten
+DayXpm="13 14 16 1"
+" 	c None"
+".	c #FFFFFF"
+"+	c #000000"
+"@	c #D0D0A0"
+"#	c #E8E8A8"
+"$	c #F8F8B0"
+"%	c #D8D8A0"
+"&	c #C8C898"
+"*	c #B0B090"
+"=	c #A0A088"
+"-	c #888880"
+";	c #C8C8A0"
+">	c #E0E0A8"
+",	c #00F8F8"
+"'	c #0080F8"
+")	c #0000F8"
+"   ....      "
+"  .++++.     "
+"  ..++...... "
+" .++++++++++."
+".+@#$$%&*=-+."
+".+;%>>++++++."
+".++++++..... "
+" ..+...      "
+"  .+.        "
+" .+,+.       "
+".+'')+.      "
+".+)))+.      "
+" .+++.       "
+"  ...        "
+[end]
+
+[_point]
+Type=0x660f
+String=0x04,barrier
+String=0x07,Barriär
+DayXpm="7 7 3 1"
+" 	c None"
+".	c #FFFFFF"
+"+	c #000000"
+"   .   "
+"  .+.  "
+" .+++. "
+".++.++."
+" .+++. "
+"  .+.  "
+"   .   "
+[end]
+
+[_line]
+Type=0x01
+String=0x02,Autobahn
+String=0x04,motorway
+String=0x07,Motorväg
+ExtendedLabels=Y
+FontStyle=SmallFont
+LineWidth=6
+BorderWidth=1
+Xpm="0 0 2 0"
+"a c #B0B0B0"
+"b c #FFFFFF"
+[end]
+
+[_line]
+Type=0x02
+String=0x04,trunk
+String=0x07,Riksväg
+ExtendedLabels=Y
+FontStyle=SmallFont
+LineWidth=5
+BorderWidth=1
+Xpm="0 0 2 0"
+"a c #B0B0B0"
+"b c #FFFFFF"
+[end]
+
+[_line]
+Type=0x03
+String=0x04,primary street
+String=0x07,Huvudgata
+ExtendedLabels=Y
+FontStyle=SmallFont
+LineWidth=4
+BorderWidth=1
+Xpm="0 0 2 0"
+"a c #B0B0B0"
+"b c #FFFFFF"
+[end]
+
+[_line]
+Type=0x04
+ExtendedLabels=Y
+FontStyle=SmallFont
+LineWidth=3
+BorderWidth=1
+Xpm="0 0 2 0"
+"a c #f6f8d2"
+"b c #000000"
+[end]
+
+[_line]
+Type=0x05
+ExtendedLabels=Y
+FontStyle=SmallFont
+LineWidth=2
+BorderWidth=1
+Xpm="0 0 2 0"
+"a c #ffffff"
+"b c #000000"
+[end]
+
+[_line]
+Type=0x06
+ExtendedLabels=Y
+FontStyle=SmallFont
+LineWidth=2
+BorderWidth=1
+Xpm="0 0 2 0"
+"a c #ffffff"
+"b c #000000"
+[end]
+
+;[_line]
+;Type=0x007
+;String=0x07,Väg
+;UseOrientation=N
+;ExtendedLabels=N
+;FontStyle=SmallFont
+;LineWidth=4
+;BorderWidth=0
+;Xpm="0 0 1 0"
+;"0 c #000000"
+;[end]
+
+
+[_line]
+Type=0x08
+ExtendedLabels=N
+FontStyle=SmallFont
+LineWidth=1
+BorderWidth=1
+Xpm="0 0 2 0"
+"a c #f6f8d2"
+"b c #000000"
+[end]
+
+[_line]
+Type=0x09
+ExtendedLabels=N
+FontStyle=SmallFont
+LineWidth=1
+BorderWidth=1
+Xpm="0 0 2 0"
+"a c #B0B0B0"
+"b c #FFFFFF"
+[end]
+
+[_line]
+Type=0x0a
+String=0x07,Grusväg
+ExtendedLabels=Y
+FontStyle=SmallFont
+Xpm="32 3 2 1"
+"  c none"
+"# c #46230c"
+"##############  ##############  "
+"##############  ##############  "
+"##############  ##############  "
+[end]
+
+[_line]
+Type=0x010000
+String=0x07,Cykelväg
+ExtendedLabels=Y
+FontStyle=SmallFont
+LineWidth=4
+Xpm="0 0 1 0"
+"a c #00009c"
+[end]
+
+[_line]
+Type=0x011000
+String=0x07,Anvisad cykelväg
+ExtendedLabels=Y
+FontStyle=SmallFont
+Xpm="32 4 2 1"
+"= c #00009c"
+"  c none"
+"======  ======  ======  ======  "
+"======  ======  ======  ======  "
+"======  ======  ======  ======  "
+"======  ======  ======  ======  "
+[end]
+
+
+[_line]
+Type=0x07
+String=0x07,Gångväg
+ExtendedLabels=Y
+FontStyle=SmallFont
+Xpm="32 3 2 1"
+"= c #CCF0A8"
+"  c #FFFFFF"
+"=== ===  === ===  === ===  ===  "
+"=== ===  === ===  === ===  ===  "
+"=== ===  === ===  === ===  ===  "
+[end]
+
+[_line]
+Type=0x0b
+ExtendedLabels=Y
+FontStyle=SmallFont
+LineWidth=2
+BorderWidth=1
+Xpm="0 0 2 0"
+"a c #fdfd4f"
+"b c #000000"
+[end]
+
+[_line]
+Type=0x0c
+ExtendedLabels=Y
+FontStyle=SmallFont
+LineWidth=2
+BorderWidth=1
+Xpm="0 0 2 0"
+"a c #ffffff"
+"b c #000000"
+[end]
+
+[_line]
+Type=0x0d
+String=0x04,pedestrian zone
+String=0x07,Gågata
+ExtendedLabels=Y
+FontStyle=SmallFont
+LineWidth=1
+BorderWidth=1
+Xpm="0 0 2 0"
+"a c #B0B0B0"
+"b c #f6f8d2"
+[end]
+
+[_line]
+Type=0x13
+String=0x04,steps
+String=0x07,Trappor
+ExtendedLabels=Y
+FontStyle=SmallFont
+Xpm="32 3 2 1"
+" c None"
+"# c #B0B0B0"
+"#  #  #  #  #  #  #  #  #  #  # "
+"#  #  #  #  #  #  #  #  #  #  # "
+"#  #  #  #  #  #  #  #  #  #  # "
+[end]
+
+[_line]
+Type=0x0E
+String=0x04,Path
+String=0x07,Stig
+ExtendedLabels=Y
+FontStyle=SmallFont
+Xpm="32 3 2 1"
+"  c none"
+"# c #114021"
+"###  ###  ###   ###  ###  ###   "
+"###  ###  ###   ###  ###  ###   "
+"###  ###  ###   ###  ###  ###   "
+[end]
+
+[_line]
+Type=0x16
+String=0x04,Road, no bikes allowed
+String=0x07,Väg, ej cykel
+ExtendedLabels=Y
+FontStyle=SmallFont
+Xpm="32 3 2 1"
+"= c #CCF0A8"
+"  c #FFFFFF"
+"====    ====    ====    ====    "
+"====    ====    ====    ====    "
+"====    ====    ====    ====    "
+[end]
+
+
+
+[_line]
+Type=0x18
+String=0x04,stream
+String=0x07,Bäck
+LineWidth=2
+Xpm="0 0 1 0"
+"0 c #8ecbeb"
+[end]
+
+[_line]
+Type=0x1b
+String=0x04,ferry
+String=0x07,Färja
+Xpm="32 1 2 1"
+"  c none"
+"# c #0000ff"
+"########        ########        "
+[end]
+
+[_line]
+Type=0x1c
+String=0x04,border
+String=0x07,Gräns
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+Xpm="32 1 2 1"
+"  c none"
+"# c #ff80ff"
+"##############        ##        "
+[end]
+
+[_line]
+Type=0x1d
+String=0x04,border
+String=0x07,Gräns
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+Xpm="32 1 2 1"
+"  c none"
+"# c #ff80ff"
+"##############        ##        "
+[end]
+
+[_line]
+Type=0x1e
+String=0x02,Grenze
+String=0x04,border
+String=0x07,Gräns
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+Xpm="32 2 2 1"
+"  c none"
+"# c #ff80ff"
+"##############        ##        "
+"##############        ##        "
+[end]
+
+[_line]
+Type=0x1f
+String=0x02,Fluss
+String=0x04,river
+String=0x07,Flod
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=Day
+DaycustomColor=#8ecbeb
+LineWidth=4
+Xpm="0 0 1 0"
+"0 c #8ecbeb"
+[end]
+
+[_line]
+Type=0x27
+String=0x02,Landebahn
+String=0x04,runway
+String=0x07,Landningsbana
+LineWidth=2
+Xpm="0 0 1 0"
+"0 c #a0a0a0"
+[end]
+
+[_line]
+Type=0x2d
+String=0x02,Gleis
+String=0x04,rail
+String=0x07,Järnväg
+Xpm="32 3 2 1"
+"  c none"
+"# c #B0B0B0"
+"################################"
+"####    ####    ####    ####    "
+"################################"
+[end]
+
+
+[_line]
+Type=0x31
+String=0x02,Hang
+String=0x04,cliff
+String=0x07,Klippa
+FontStyle=NoLabel (invisible)
+UseOrientation=Y
+Xpm="32 4 2 1"
+"  c none"
+"# c #000000"
+"   #       #       #       #    "
+"          ###             ###   "
+"         #####           #####  "
+"################################"
+[end]
+
+[_line]
+Type=0x33
+String=0x04,fence
+String=0x07,Staket
+FontStyle=NoLabel (invisible)
+Xpm="32 5 2 1"
+"  c none"
+"# c #000000"
+"       #                #       "
+"       #                #       "
+"################################"
+"       #                #       "
+"       #                #       "
+
+
+[end][_line]
+Type=0x28
+String=0x04,Hedge
+String=0x07,Häck
+FontStyle=NoLabel (invisible)
+Xpm="32 2 2 1"
+"  c none"
+"# c #ADCC8F"
+"################################"
+"################################"
+[end]
+
+
+[_polygon]
+Type=0x04
+String=0x02,Sperrgebiet
+String=0x04,exclusion zone
+String=0x07,Avspärrat område
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+Xpm="32 32 2 1"
+"  c none"
+"0 c #b15e4f"
+"       0       0       0       0"
+"      0       0       0       0 "
+"     0       0       0       0  "
+"    0       0       0       0   "
+"   0       0       0       0    "
+"  0       0       0       0     "
+" 0       0       0       0      "
+"0       0       0       0       "
+"       0       0       0       0"
+"      0       0       0       0 "
+"     0       0       0       0  "
+"    0       0       0       0   "
+"   0       0       0       0    "
+"  0       0       0       0     "
+" 0       0       0       0      "
+"0       0       0       0       "
+"       0       0       0       0"
+"      0       0       0       0 "
+"     0       0       0       0  "
+"    0       0       0       0   "
+"   0       0       0       0    "
+"  0       0       0       0     "
+" 0       0       0       0      "
+"0       0       0       0       "
+"       0       0       0       0"
+"      0       0       0       0 "
+"     0       0       0       0  "
+"    0       0       0       0   "
+"   0       0       0       0    "
+"  0       0       0       0     "
+" 0       0       0       0      "
+"0       0       0       0       "
+[end]
+
+[_polygon]
+Type=0x0c
+String=0x04,Construction zone
+String=0x07,Byggarbetsplats
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+Xpm="32 32 2 1"
+"  c #eccfb2"
+"0 c #d2b393"
+"       0       0       0       0"
+"      0       0       0       0 "
+"     0       0       0       0  "
+"    0       0       0       0   "
+"   0       0       0       0    "
+"  0       0       0       0     "
+" 0       0       0       0      "
+"0       0       0       0       "
+"       0       0       0       0"
+"      0       0       0       0 "
+"     0       0       0       0  "
+"    0       0       0       0   "
+"   0       0       0       0    "
+"  0       0       0       0     "
+" 0       0       0       0      "
+"0       0       0       0       "
+"       0       0       0       0"
+"      0       0       0       0 "
+"     0       0       0       0  "
+"    0       0       0       0   "
+"   0       0       0       0    "
+"  0       0       0       0     "
+" 0       0       0       0      "
+"0       0       0       0       "
+"       0       0       0       0"
+"      0       0       0       0 "
+"     0       0       0       0  "
+"    0       0       0       0   "
+"   0       0       0       0    "
+"  0       0       0       0     "
+" 0       0       0       0      "
+"0       0       0       0       "
+[end]
+
+[_polygon]
+Type=0x10
+String=0x02,Bebauung
+String=0x02,built-up area
+String=0x07,Bebyggelse
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+Xpm="0 0 1 0"
+"a c #ececec"
+[end]
+
+[_polygon]
+Type=0x13
+String=0x02,Gebäude
+String=0x04,building
+String=0x07,Byggnad
+Xpm="0 0 1 0"
+"a c #cacaca"
+[end]
+
+[_polygon]
+Type=0x3a
+String=0x04,Farmland
+String=0x07,Åker
+Xpm="0 0 1 0"
+"a c #faffdd"
+[end]
+
+
+[_polygon]
+Type=0x14
+String=0x04,Grass
+String=0x07,Gräs
+Xpm="0 0 1 0"
+"a c #D8FFB2"
+[end]
+[_polygon]
+Type=0x17
+String=0x04,Park
+String=0x07,Park
+Xpm="0 0 1 0"
+"a c #D8FFB2"
+[end]
+
+[_polygon]
+Type=0x19
+String=0x02,Sportplatz
+String=0x04,sports field
+String=0x07,Idrottsområde
+Xpm="0 0 1 0"
+"a c #D4FAAF"
+[end]
+
+[_polygon]
+Type=0x1a
+String=0x02,Friedhof
+String=0x04,cemetery
+String=0x07,Kyrkogård
+Xpm="32 32 2 1"
+"0 c #cadf9f"
+"  c #dfecc6"
+"                                "
+"                                "
+"           0               0    "
+"          000             000   "
+"          000             000   "
+"         00000           00000  "
+"                                "
+"                                "
+"                                "
+"                                "
+"   0               0            "
+"  000             000           "
+"  000             000           "
+" 00000           00000          "
+"                                "
+"                                "
+"                                "
+"                                "
+"           0               0    "
+"          000             000   "
+"          000             000   "
+"         00000           00000  "
+"                                "
+"                                "
+"                                "
+"                                "
+"   0               0            "
+"  000             000           "
+"  000             000           "
+" 00000           00000          "
+"                                "
+"                                "
+[end]
+
+
+[_polygon]
+Type=0x32
+String=0x02,Meer
+String=0x04,sea
+String=0x07,Sjö
+Xpm="0 0 1 0"
+"a c #8ecbeb"
+[end]
+
+
+[_polygon]
+Type=0x3c
+String=0x04,water
+String=0x02,Gewässer
+String=0x07,Vatten
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=Day
+DaycustomColor:#8ecbeb
+Xpm="0 0 1 0"
+"1 c #8ecbeb"
+[end]
+
+
+[_polygon]
+Type=0x3d
+String=0x04,water
+String=0x02,Gewässer
+String=0x07,Vatten
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+Xpm="0 0 1 0"
+"1 c #8ecbeb"
+[end]
+
+
+[_polygon]
+Type=0x46
+String=0x02,Fluss
+String=0x04,river
+String=0x07,Flod
+ExtendedLabels=Y
+FontStyle=SmallFont
+CustomColor=Day
+DaycustomColor:#8ecbeb
+Xpm="0 0 1 0"
+"a c #8ecbeb"
+[end]
+
+[_polygon]
+Type=0x47
+String=0x02,Fluss
+String=0x04,river
+String=0x07,Flod
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+Xpm="0 0 1 0"
+"a c #8ecbeb"
+[end]
+
+[_polygon]
+Type=0x4b
+Xpm="0 0 1 0"
+"a c #ffffff"
+[end]
+
+[_polygon]
+Type=0x4e
+String=0x02,Wein
+String=0x04,wine
+String=0x07,Vinodling
+Xpm="32 32 2 1"
+"  c none"
+"0 c #00c000"
+"                                "
+"                                "
+"           0               0    "
+"           0               0    "
+"           0               0    "
+"           0               0    "
+"                                "
+"                                "
+"                                "
+"                                "
+"   0               0            "
+"   0               0            "
+"   0               0            "
+"   0               0            "
+"                                "
+"                                "
+"                                "
+"                                "
+"           0               0    "
+"           0               0    "
+"           0               0    "
+"           0               0    "
+"                                "
+"                                "
+"                                "
+"                                "
+"   0               0            "
+"   0               0            "
+"   0               0            "
+"   0               0            "
+"                                "
+"                                "
+[end]
+
+[_polygon]
+Type=0x4f
+String=0x02,Busch
+String=0x04,scrubs
+String=0x07,Busksnår
+Xpm="32 32 2 1"
+"  c #F2FAC8"
+"0 c #C5CCA3"
+"                                "
+"                                "
+"                                "
+"                                "
+"                         00     "
+"                        0  0    "
+"                        0  0    "
+"                        00 00   "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"         00                     "
+"        0  0                    "
+"        0  0                    "
+"        00 00                   "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+"                                "
+[end]
+
+[_polygon]
+Type=0x50
+String=0x07,Skog
+ExtendedLabels=Y
+FontStyle=NoLabel (invisible)
+Xpm="0 0 1 0"
+"1 c #CCF0A8"
+[end]
+
+[_polygon]
+Type=0x51
+String=0x02,Wetlands
+String=0x07,Mosse
+Xpm="32 32 2 1"
+"  c #D8FFB2"
+"= c #8ecbeb"
+"         =======                "
+"                  =======       "
+"                                "
+"=======      =======            "
+"                                "
+"   =======       =======        "
+"                                "
+"      =======                   "
+"                    =======     "
+"             =======            "
+"  =======                       "
+"                                "
+"=======         =======         "
+"         =======                "
+"                  =======       "
+"                         ======="
+"=======      =======            "
+"                                "
+"                       ======== "
+"      =======                   "
+"                    =======     "
+"             =======            "
+"  =======                       "
+"                                "
+"=======         =======         "
+"                                "
+"          =======               "
+"                         ======="
+"=======      =======            "
+"                                "
+"   =======       =======        "
+"                                "
+[end]
+
+[_polygon]
+Type=0x55
+String=0x02,Sand/Strand
+String=0x04,sand/beach
+String=0x07,Strand
+Xpm="0 0 1 0"
+"a c #f5e9c6"
+[end]

@@ -1,0 +1,207 @@
+# -------------------------------------------------------------------
+# This is the default mkgmap style file for converting OSM nodes
+# into Garmin POIs.
+# Any line prefaced with # is a comment and will not be applied.
+# Each line is a rule, of the generalised format:
+#  OSM_tag(s)_to_match  [Garmin_type_code resolution]
+# See http://wiki.openstreetmap.org/wiki/Mkgmap/help/style_rules
+# and http://wiki.openstreetmap.org/wiki/Mkgmap/help/Custom_styles
+# for more information.
+
+barrier=* & bicycle=*    { set mkgmap:bicycle='${bicycle|subst:private=>no}' }
+barrier=* & foot=*       { set mkgmap:foot='${foot|subst:private=>no}' }                  
+barrier=* & hgv=*        { set mkgmap:truck='${hgv|subst:private=>no}' }                  
+barrier=* & motorcar=*   { set mkgmap:car='${motorcar|subst:private=>no}' }
+barrier=* & psv=*        { set mkgmap:bus='${psv|subst:private=>no}' }                  
+barrier=* & taxi=*       { set mkgmap:taxi='${taxi|subst:private=>no}' }                  
+barrier=* & emergency=*  { set mkgmap:emergency='${emergency|subst:private=>no}' }                  
+barrier=* & delivery=*   { set mkgmap:delivery='${delivery|subst:private=>no}' }                  
+barrier=* & access=*     { addaccess '${access|subst:private=>no}' }
+
+barrier=bollard | barrier=cycle_barrier 
+    { add mkgmap:bicycle=yes; 
+      add mkgmap:foot=yes; 
+      addaccess no;
+      set mkgmap:road-speed=1; }
+barrier=bus_trap  
+    { add mkgmap:bus=yes; 
+      add mkgmap:foot=yes; 
+      add mkgmap:bicycle=yes; 
+      addaccess no;
+      set mkgmap:road-speed=1; }
+barrier=gate
+    { add mkgmap:bicycle=yes; 
+      add mkgmap:foot=yes; 
+      addaccess no;
+      set mkgmap:road-speed=0; }
+barrier=kissing_gate | barrier=stile | barrier=block
+    { add mkgmap:foot=yes; 
+      addaccess no;
+      set mkgmap:road-speed=0; }
+
+
+include 'inc/name';
+
+place=city & population > 999999 & name=*  {set cityxx=yes} [0x0100 resolution 11 continue with_actions]
+place=city & population > 799999 & cityxx!=yes & name=*  {set cityxx=yes} [0x0200 resolution 12 continue with_actions]
+place=city & population > 399999 & cityxx!=yes & name=*  {set cityxx=yes} [0x0300 resolution 13 continue with_actions]
+place=city & population > 299999 & cityxx!=yes & name=*  {set cityxx=yes} [0x0400 resolution 14 continue with_actions]
+place=city & population > 199999 & cityxx!=yes & name=*  {set cityxx=yes} [0x0500 resolution 14 continue with_actions]
+place=city & population >  99999 & cityxx!=yes & name=*  {set cityxx=yes} [0x0600 resolution 15 continue with_actions]
+place=city & population >  49999 & cityxx!=yes & name=*  {set cityxx=yes} [0x0700 resolution 15 continue with_actions]
+place=city & population >   9999 & cityxx!=yes & name=*  {set cityxx=yes} [0x0800 resolution 16 continue with_actions]
+
+place=city & population >       0 & cityxx!=yes & name=*  {set cityxx=yes} [0x0800 resolution 16 continue with_actions]
+place=city                          & cityxx!=yes & name=*  {set cityxx=yes} [0x0700 resolution 16 continue with_actions]
+
+place=town   & population >  69999 & cityxx!=yes  & name=* {set cityxx=yes} [0x0600 resolution 15 continue with_actions]
+place=town   & population >  19999 & cityxx!=yes  & name=* {set cityxx=yes} [0x0700 resolution 16 continue with_actions]
+place=town   & population >   9999 & cityxx!=yes  & name=* {set cityxx=yes} [0x0800 resolution 17 continue with_actions]
+place=town   & population >   4999 & cityxx!=yes  & name=* {set cityxx=yes} [0x0900 resolution 17 continue with_actions]
+place=town   & population >    999 & cityxx!=yes  & name=* {set cityxx=yes} [0x0a00 resolution 17 continue with_actions]
+place=town   & population >         0 & cityxx!=yes  & name=* {set cityxx=yes} [0x0b00 resolution 18 continue with_actions]
+place=town                            & cityxx!=yes  & name=* {set cityxx=yes} [0x0800 resolution 17 continue with_actions]
+
+
+#place=city	[0x0300 resolution 15-18 continue]
+#place=city	[0x0200 resolution 19-21]
+#place=town	[0x0400 resolution 18-19 continue]
+#place=town	[0x0300 resolution 20]
+
+place=village   & population >   999 & cityxx!=yes  & name=* {set cityxx=yes} [0x0800 resolution 19 continue with_actions]
+place=village & cityxx!=yes {set cityxx=yes} 	[0x0900 resolution 20 continue with_actions]
+
+place=island & cityxx!=yes  {set cityxx=yes}	[0x650c level 0 continue with_actions]
+place=islet & cityxx!=yes   {set cityxx=yes}	[0x650c resolution 21 continue with_actions]
+place=suburb & cityxx!=yes  {set cityxx=yes}	[0x0a00 resolution 21 continue with_actions]
+place=hamlet & cityxx!=yes  {set cityxx=yes}	[0x0b00 level 0 continue with_actions]
+place=locality & cityxx!=yes  {set cityxx=yes}	[0x0b00 level 0 continue with_actions]
+
+#aeroway=airport [0x5900 resolution 22]
+aeroway=airport [0x2f04 resolution 22]
+aeroway=aerodrome [0x2f04 resolution 22]
+aeroway=helipad [0x5904 level 0]
+aeroway=terminal [0x2f04 level 0]
+
+(amenity=drinking_water & drinkable!=no) | drinkable=yes [0x6414 level 0]
+amenity=parking & access!=private & is_in(landuse,residential,in)=no [0x2f0b resolution 19]
+amenity=parking & access!=private [0x2f0b level 0]
+amenity=pharmacy [0x2e05 level 0]
+# amenity=shelter is ambiguous; when possible, consider using other tags:
+#  tourism=lean_to or tourism=picnic_site
+#  shelter=yes on highway=bus_stop or highway=tram_stop or railway=halt
+amenity=shelter [0x2b06 level 0]
+# amenity=supermarket is superceded by shop=supermarket
+amenity=supermarket [0x2e02 level 0]
+#amenity=toilets & tourism=information [0x2f0c level 0]
+amenity=toilets [0x4e00 level 0]
+
+landuse=military [0x640b level 0]
+landuse=village_green & name=* [0x2c06 level 0]
+
+healthcare=hospital | amenity=hospital [0x3002 resolution 22]
+healthcare=* | amenity=dentist | amenity=doctors [0x3002 level 0]
+
+highway=bus_stop [0x2f17 level 0]
+
+highway=motorway_junction [0x2100 level 0]
+
+highway=services & mkgmap:area2poi!=true [0x210f level 0 default_name 'Services']
+
+historic=castle [0x2c0d resolution 21 default_name 'Schloss']
+historic=museum [0x2c02 level 0]
+historic=archaeological_site | historic=ruins [0x2c02 level 0]
+historic=memorial [0x2c02 level 0]
+
+leisure=common & name=* [0x2c06 level 0]
+leisure=garden & name=* [0x2c06 level 0]
+leisure=golf_course [0x2d05 level 0]
+leisure=ice_rink [0x2d08 level 0]
+leisure=marina [0x4300 level 0]
+leisure=nature_reserve & name=* [0x6612 level 0]
+leisure=park [0x2c06 level 0]
+leisure=pitch { name '${name} (${sport})' | '${name}' } [0x2c08 level 0]
+leisure=playground [0x2c06 level 0]
+leisure=recreation_ground [0x2c08 level 0]
+leisure=sports_center | leisure=sports_centre { name '${name} (${sport})' | '${name}' } [0x2d0a level 0]
+leisure=stadium { name '${name} (${sport})' | '${name}' } [0x2c08 level 0]
+leisure=track { name '${name} (${sport})' | '${name}' } [0x2c08 level 0]
+leisure=water_park [0x2b04 level 0]
+
+
+man_made=communications_tower | communication:radio=yes | communication:television=yes [0x6700 resolution 20]
+man_made=tower & (tower:type=observation | tourism=viewpoint) [0x6701 resolution 22]
+man_made=tower & tower:type=communication [0x6700 resolution 22]
+man_made=tower & !(tower:type=bell_tower) [0x6411 resolution 22]
+# man_made=tower|landmark=chimney [0x6411 resolution 22]
+man_made=water_tower [0x6412 resolution 22]
+man_made=watermill [0x6415 level 0]
+man_made=mast [0x6702 resolution 22]
+
+power=generator & generator:source=wind [0x6413 resolution 20]
+
+natural=tree & (name=* | denotation=landmark) & type!=conifer [0x6416 level 0]
+natural=tree & (name=* | denotation=landmark) & type=conifer [0x6417 level 0]
+
+
+# Edge 705 displays 0x650a,0x6511,0x6512,0x6513,0x6603,0x6614 as hollow white circles, no menu
+natural=cave_entrance [0x6619 resolution 22]
+natural=cliff [0x6607 level 0]
+natural=peak {name '${name|def:}${ele|height:m=>ft|def:}' } [0x6616 level 0]
+natural=rock [0x6614 level 0]
+natural=volcano [0x2c0c level 0]
+
+railway=halt [0x2f08 level 0]
+railway=station [0x2f08 resolution 22]
+railway=tram_stop [0x2f17 level 0]
+
+#shop=bakers [0x2e02 level 0]
+#shop=bakery [0x2e02 level 0]
+shop=bakers [0x2a0d level 0]
+shop=bakery [0x2a0d level 0]
+
+shop=bicycle [0x2f13 level 0]
+shop=convenience [0x2e06 level 0]
+shop=department_store [0x2e01 level 0]
+shop=doityourself [0x2e09 level 0]
+shop=mall [0x2e04 level 0]
+
+sport=9pin [0x2d07 level 0]
+sport=10pin [0x2d07 level 0]
+sport=airport [0x2d0b level 0]
+sport=multi [0x2d0a level 0]
+sport=skating [0x2d08 level 0]
+sport=skiing [0x2d06 level 0]
+sport=swimming & access!=private [0x2d09 level 0]
+
+tourism=alpine_hut [0x2b02 level 0]
+tourism=attraction & historic=* [0x2c02 level 0]
+tourism=attraction [0x2c04 level 0]
+tourism=artwork [0x2c04 level 0]
+tourism=aquarium [0x2c07 level 0]
+tourism=camp_site | tourism=caravan_site [0x2b05 level 0]
+tourism=chalet [0x2b02 level 0]
+tourism=guest_house [0x2b02 level 0]
+tourism=hostel [0x2b02 level 0]
+tourism=hotel | tourism=motel [0x2b01 level 0]
+tourism=information [0x4c00 level 0]
+# tourism=lean_to replaces some uses of amenity=shelter
+tourism=lean_to [0x2b07 level 0]
+tourism=wilderness_hut [0x2b07 level 0]
+tourism=museum [0x2c02 level 0]
+tourism=picnic_site [0x4a00 level 0]
+tourism=theme_park [0x2c01 level 0]
+tourism=viewpoint {name '${name} - ${description}' | '${name}'} [0x2c04 level 0]
+tourism=wine_cellar [0x2c0a level 0]
+tourism=zoo [0x2c07 level 0]
+
+barrier=bollard | barrier=bus_trap | barrier=gate [0x660f level 0]
+barrier=block | barrier=cycle_barrier | barrier=stile | barrier=kissing_gate [0x660f level 0]
+
+include 'inc/water_points';
+include 'inc/landuse_points';
+
+<finalize>
+# The finalizer section is executed for each element when a rule with an element type matches
+name=* { name '${name}' }
+include 'inc/address';

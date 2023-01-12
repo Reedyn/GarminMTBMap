@@ -1,0 +1,21 @@
+# Rules for naming objects, based on the following tags:
+# name, brand, operator, ref
+
+# None of operator, brand given
+ref=* & (operator!=* & brand!=*) { name '${ref} ${name}' | '${ref}' }
+
+# One of operator or brand given
+operator=* & brand!=* {
+ name '${ref} ${name}' |
+      '${name}' |
+      '${operator}: ${ref}' |
+      '${operator}' |
+      '${ref}'
+}
+brand=* & operator!=* {
+ name '${ref} ${name}' |
+      '${name}' |
+      '${ref}' |
+      '${brand}' |
+      '${ref}'
+}

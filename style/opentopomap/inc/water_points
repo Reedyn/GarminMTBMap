@@ -1,0 +1,9 @@
+landuse=basin|landuse=reservoir [0x650f level 0]
+
+natural=beach [0x6604 level 0]
+natural=glacier [0x650a level 0]
+natural=spring [0x6511 level 0]
+natural=stream [0x6512 level 0]
+natural=water & name=* [0x6603 level 0]
+natural=waterfall | waterway=waterfall [0x6508 level 0]
+natural=wetland & name=* [0x6513 level 0]
