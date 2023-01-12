@@ -12,6 +12,6 @@ Fork based on OpenTopoMap's Garmin map and restyled according to my desires and 
 
 [See DC Rainmaker's guide for installing a custom map on a Garmin device](https://www.dcrainmaker.com/2013/05/download-garmin-705800810.html#part-ii-installing-the-maps)
 
-# Instructions on how to install
+# Instructions on how to set up the dev environment
 
 [See OpenTopoMap's original instructions](https://github.com/der-stefan/OpenTopoMap/blob/master/garmin/README.md)
