@@ -9,11 +9,11 @@ TYPFILETXT=$PWD"/style/typ/opentopomap.txt"
 TYPFILE=$PWD"/style/typ/opentopomap.typ"
 DATA=$PWD"/images/6324*.pbf"
 
-rm -r "images"
+rm -rf "images"
 mkdir images
 cd images
 java -jar $SPLITTERJAR --precomp-sea=$SEA "../sweden-latest.osm.pbf"
-
+cd ..
 java -cp $MKGMAPJAR uk.me.parabola.mkgmap.main.TypCompiler $TYPFILETXT $TYPFILE
 echo 'Compiled TYPFILE'
 rm -rf "output/*"  || true
