@@ -1,6 +1,6 @@
 # Reedyn's Garmin MTB Map
 
-Fork based on OpenTopoMap's Garmin map and restyled according to my desires and heavily influenced by CyclOSM.
+Fork based on [OpenTopoMap's Garmin map](https://garmin.opentopomap.org) and restyled according to my desires and heavily influenced by [CyclOSM](https://cyclosm.org).
 
 ![Screenshot of the map on a Garmin Edge 530 device](https://gustavlindqvist.se/content/images/2021/01/121.jpg)
 
