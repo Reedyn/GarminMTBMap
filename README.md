@@ -1,4 +1,4 @@
-# Reedyn's Garmin MTB Map
+# Reedyn's Garmin Map
 
 Fork based on [OpenTopoMap's Garmin map](https://garmin.opentopomap.org) and restyled according to my desires and heavily influenced by [CyclOSM](https://cyclosm.org).
 
