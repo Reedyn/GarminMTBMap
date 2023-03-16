@@ -283,26 +283,22 @@ Xpm="32 3 2 1"
 
 [_line]
 Type=0x010000
-String=0x07,Cykelväg
+String=0x07,Skoterled
 ExtendedLabels=Y
 FontStyle=SmallFont
 LineWidth=4
 Xpm="0 0 1 0"
-"a c #00009c"
+"a c #ff0004"
 [end]
 
 [_line]
 Type=0x011000
-String=0x07,Anvisad cykelväg
+String=0x07,Cykelväg
 ExtendedLabels=Y
 FontStyle=SmallFont
-Xpm="32 4 2 1"
-"= c #00009c"
-"  c none"
-"======  ======  ======  ======  "
-"======  ======  ======  ======  "
-"======  ======  ======  ======  "
-"======  ======  ======  ======  "
+LineWidth=3
+Xpm="0 0 1 0"
+"a c #00009c"
 [end]
 
 
@@ -312,11 +308,11 @@ String=0x07,Gångväg
 ExtendedLabels=Y
 FontStyle=SmallFont
 Xpm="32 3 2 1"
-"= c #CCF0A8"
-"  c #FFFFFF"
-"=== ===  === ===  === ===  ===  "
-"=== ===  === ===  === ===  ===  "
-"=== ===  === ===  === ===  ===  "
+"  c none"
+"# c #114021"
+"###  ###  ###   ###  ###  ###   "
+"###  ###  ###   ###  ###  ###   "
+"###  ###  ###   ###  ###  ###   "
 [end]
 
 [_line]

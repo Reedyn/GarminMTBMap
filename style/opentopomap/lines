@@ -96,6 +96,9 @@ highway=unsurfaced & (bicycle=no|access=no|bicycle=private|access=private)
 highway=road & (bicycle=no|access=no|bicycle=private|access=private)
 {set highway=footway}
 
+(snowmobile=designated|snowmobile=yes)
+{set highway=snowmobile}
+
 leisure=track & area!=yes
 {add highway=footway; name '${name} (${sport})' | '${name}'}
 (man_made=pier | man_made=piste:halfpipe) & area!=yes
@@ -172,7 +175,8 @@ highway=service & (service=alley|service=driveway)
 highway=service [0x06 road_class=0 road_speed=2 level 0]
 highway=service & (surface=unpaved|surface=gravel|surface=ground|surface=dirt|surface=fine_gravel|surface=grass|surface=sand|surface=earth|surface=mud) [0x0a road_class=0 road_speed=1 resolution 22]
 
-highway=cycleway [0x010000 resolution 22]
+highway=cycleway [0x011000 resolution 22]
+highway=snowmobile [0x010000 resolution 16]
 
 
 (highway=footway|highway=path) & tracktype~'grade[1-2]' {add access = no; add foot = yes} [0x0E road_class=0 road_speed=0 level 0]

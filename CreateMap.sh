@@ -19,9 +19,9 @@ cd ..
 echo 'Compiled TYPFILE'
 rm -rf "output"  || true
 mkdir output
-java -jar $MKGMAPJAR -c $OPTIONS --style-file=$STYLEFILE --family-name="Reedyn OSM Map ($(date +"%Y-%m-%d %H:%I"))" --precomp-sea=$SEA --output-dir=output --bounds=$BOUNDS $DATA $TYPFILE
+java -jar $MKGMAPJAR -c $OPTIONS --style-file=$STYLEFILE --family-name="$(date +"%Y-%m-%d %H:%i")" --precomp-sea=$SEA --output-dir=output --bounds=$BOUNDS $DATA $TYPFILE
 echo "Copying file to root"
 sleep 1
-cp "output/gmapsupp.img" "OSM_Sweden_Reedyn_MTB.img"
+cp "output/gmapsupp.img" "REEDYN.SNOW.img"
 rm -rf "output"  || true
 echo "Done"
