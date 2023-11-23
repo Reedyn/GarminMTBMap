@@ -2,7 +2,7 @@
 
 Fork based on [OpenTopoMap's Garmin map](https://garmin.opentopomap.org) and restyled according to my desires and heavily influenced by [CyclOSM](https://cyclosm.org).
 
-![Screenshot of the map on a Garmin Edge 530 device](https://gustavlindqvist.se/content/images/2021/01/121.jpg)
+![Screenshot of the map on a Garmin Edge 530 device](https://gustavlindqvist.se/2021/01/25/jakten-pa-den-perfekta-kartan/9SxoYeSGda-246.jpeg)
 
 # Download the map
 
