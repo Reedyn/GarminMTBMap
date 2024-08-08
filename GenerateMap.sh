@@ -1,7 +1,7 @@
 #!/bin/bash
-MKGMAPJAR=$PWD"/tools/mkgmap-r4905/mkgmap.jar"
+MKGMAPJAR=$PWD"/tools/mkgmap/mkgmap.jar"
 BOUNDS=$PWD"/bounds"
-SEA=$PWD"/sea/sea"
+SEA=$PWD"/sea"
 OPTIONS=$PWD"/opentopomap_options"
 STYLEFILE=$PWD"/style/opentopomap"
 TYPFILETXT=$PWD"/style/typ/opentopomap.txt"

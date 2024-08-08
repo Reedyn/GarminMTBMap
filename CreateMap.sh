@@ -1,7 +1,7 @@
 #!/bin/bash
-SPLITTERJAR=$PWD"/tools/splitter-r653/splitter.jar"
-SEA=$PWD"/sea/sea"
-MKGMAPJAR=$PWD"/tools/mkgmap-r4905/mkgmap.jar"
+SPLITTERJAR=$PWD"/tools/splitter/splitter.jar"
+SEA=$PWD"/sea"
+MKGMAPJAR=$PWD"/tools/mkgmap/mkgmap.jar"
 BOUNDS=$PWD"/bounds"
 OPTIONS=$PWD"/opentopomap_options"
 STYLEFILE=$PWD"/style/opentopomap"

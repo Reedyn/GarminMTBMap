@@ -1,6 +1,6 @@
 #!/bin/bash
-SPLITTERJAR=$PWD"/tools/splitter-r653/splitter.jar"
-SEA=$PWD"/sea/sea"
+SPLITTERJAR=$PWD"/tools/splitter/splitter.jar"
+SEA=$PWD"/sea"
 
 rm -r "images"
 mkdir images
